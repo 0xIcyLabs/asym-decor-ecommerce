@@ -143,7 +143,7 @@ function OrdersTab() {
     mutationFn: async ({ id, next }: { id: string; next: string }) => {
       const { error } = await supabase
         .from("orders")
-        .update({ status: next as OrderRow["status"] })
+        .update({ status: next as (typeof ORDER_STATUSES)[number] })
         .eq("id", id);
       if (error) throw error;
     },
