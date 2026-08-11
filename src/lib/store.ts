@@ -76,7 +76,7 @@ export function buildWhatsappMessage(opts: {
     `Delivery (${draft.city}): ${formatPKR(delivery)}`,
     `Total: ${formatPKR(total)}`,
     "",
-    `Name: ${draft.draft_name ?? draft.customer_name}`,
+    `Name: ${draft.customer_name}`,
     `Phone: ${draft.phone}`,
     `Address: ${draft.address}, ${draft.city}`,
     draft.note ? `Note: ${draft.note}` : "",
