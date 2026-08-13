@@ -1,0 +1,1 @@
+DELETE FROM public.admin_emails WHERE lower(email) = 'admin@example.com';
