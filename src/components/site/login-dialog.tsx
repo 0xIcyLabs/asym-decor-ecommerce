@@ -95,6 +95,10 @@ export function LoginDialog({ open, onOpenChange, onSuccess, title, description 
           <div className="space-y-3">
             <div className="space-y-1.5">
               <Label htmlFor="otp-code">6-digit code sent to {email}</Label>
+              <p className="text-xs text-muted-foreground">
+                If the email shows a login link instead of a code, tapping that link signs you in
+                too.
+              </p>
               <Input
                 id="otp-code"
                 inputMode="numeric"
