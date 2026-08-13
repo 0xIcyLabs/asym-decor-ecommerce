@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, MessageCircle, MapPin, Mail } from "lucide-react";
+import { Instagram, Music2, MessageCircle, MapPin, Mail } from "lucide-react";
 import {
   BRAND,
   BRAND_TAGLINE,
   CONTACT_EMAIL,
-  FACEBOOK_USERNAME,
   INSTAGRAM_USERNAME,
   LOCATION,
+  TIKTOK_USERNAME,
   whatsappLink,
 } from "@/lib/store";
 
@@ -37,13 +37,13 @@ export function Footer() {
               <Instagram className="size-4" strokeWidth={1.5} />
             </a>
             <a
-              href={`https://facebook.com/${FACEBOOK_USERNAME}`}
+              href={`https://tiktok.com/@${TIKTOK_USERNAME}`}
               target="_blank"
               rel="noreferrer"
-              aria-label="Facebook"
+              aria-label="TikTok"
               className="grid size-9 place-items-center rounded-full border border-border bg-card transition-colors hover:bg-accent"
             >
-              <Facebook className="size-4" strokeWidth={1.5} />
+              <Music2 className="size-4" strokeWidth={1.5} />
             </a>
           </div>
         </div>

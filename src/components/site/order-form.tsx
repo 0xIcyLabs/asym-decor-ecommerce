@@ -53,7 +53,7 @@ export function OrderForm({ product, onDone }: { product: Product; onDone?: () =
     () =>
       draft.customer_name.trim().length >= 3 &&
       draft.phone.replace(/\D/g, "").length >= 10 &&
-      draft.address.trim().length >= 10 &&
+      draft.address.trim().split(/\s+/).filter(Boolean).length >= 2 &&
       draft.quantity > 0,
     [draft],
   );
@@ -249,7 +249,7 @@ export function OrderForm({ product, onDone }: { product: Product; onDone?: () =
       </div>
       {!valid ? (
         <p className="text-center text-xs text-muted-foreground">
-          Fill in your name, phone and full address to enable ordering.
+          Fill in your name, phone and address (at least 2 words) to enable ordering.
         </p>
       ) : null}
 

@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Facebook, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Instagram, Music2, Mail, MapPin, MessageCircle } from "lucide-react";
 import {
   BRAND,
   CONTACT_EMAIL,
-  FACEBOOK_USERNAME,
   INSTAGRAM_USERNAME,
   LOCATION,
+  TIKTOK_USERNAME,
   whatsappLink,
 } from "@/lib/store";
 import { SiteShell } from "@/components/site/site-shell";
@@ -14,13 +14,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Orders on WhatsApp | Home Decor" },
+      { title: "Contact & Orders on WhatsApp | Asym Decor" },
       {
         name: "description",
         content:
-          "Message Home Decor on WhatsApp or Instagram for orders, custom pieces and delivery questions. Based in Pakistan, Cash on Delivery nationwide.",
+          "Message Asym Decor on WhatsApp or Instagram for orders, custom pieces and delivery questions. Based in Pakistan, Cash on Delivery nationwide.",
       },
-      { property: "og:title", content: "Contact Home Decor" },
+      { property: "og:title", content: "Contact Asym Decor" },
       {
         property: "og:description",
         content: "Reach us on WhatsApp, Instagram or email for orders and custom requests.",
@@ -70,14 +70,14 @@ function ContactPage() {
             <p className="text-sm text-muted-foreground">@{INSTAGRAM_USERNAME}</p>
           </a>
           <a
-            href={`https://facebook.com/${FACEBOOK_USERNAME}`}
+            href={`https://tiktok.com/@${TIKTOK_USERNAME}`}
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-border bg-card p-5 transition-colors hover:bg-accent"
           >
-            <Facebook className="size-4 text-primary" strokeWidth={1.5} />
-            <p className="mt-2 text-sm">Facebook</p>
-            <p className="text-sm text-muted-foreground">/{FACEBOOK_USERNAME}</p>
+            <Music2 className="size-4 text-primary" strokeWidth={1.5} />
+            <p className="mt-2 text-sm">TikTok</p>
+            <p className="text-sm text-muted-foreground">@{TIKTOK_USERNAME}</p>
           </a>
         </div>
       </section>

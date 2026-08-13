@@ -1,12 +1,9 @@
-// ---------------------------------------------------------------------------
-// TODO before publishing: replace these placeholders with the real values.
-// ---------------------------------------------------------------------------
-export const BRAND = "Home Decor";
+export const BRAND = "Asym Decor";
 export const BRAND_TAGLINE = "Handmade pieces for calm, warm homes.";
-export const WHATSAPP_NUMBER = "923000000000"; // digits only, incl. country code
-export const INSTAGRAM_USERNAME = "yourbrand";
-export const FACEBOOK_USERNAME = "yourbrand";
-export const CONTACT_EMAIL = "hello@example.com";
+export const WHATSAPP_NUMBER = "923084558835"; // digits only, incl. country code
+export const INSTAGRAM_USERNAME = "asym.pk";
+export const TIKTOK_USERNAME = "asym.pk";
+export const CONTACT_EMAIL = "asymdecor@gmail.com";
 export const LOCATION = "Lahore, Pakistan";
 
 export const CATEGORIES = ["Trinket Trays", "Candles", "Wall Decor", "Vases"] as const;
