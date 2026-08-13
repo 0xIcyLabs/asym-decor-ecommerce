@@ -27,7 +27,7 @@ function AuthPage() {
         <p className="eyebrow">Account</p>
         <h1 className="mt-2 text-4xl">Log in to {BRAND}</h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          We'll email you a 6-digit code — no password to remember.
+          We'll email you a verification link — no password to remember.
         </p>
         <div className="mt-8">
           <LoginDialog
