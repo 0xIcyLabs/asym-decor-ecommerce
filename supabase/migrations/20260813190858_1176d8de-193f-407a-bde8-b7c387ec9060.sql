@@ -1,0 +1,1 @@
+CREATE POLICY "No Data API access" ON public.admin_emails FOR ALL TO authenticated, anon USING (false) WITH CHECK (false);
