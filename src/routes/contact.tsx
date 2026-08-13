@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Facebook, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Instagram, Music2, Mail, MapPin, MessageCircle } from "lucide-react";
 import {
   BRAND,
   CONTACT_EMAIL,
-  FACEBOOK_USERNAME,
   INSTAGRAM_USERNAME,
   LOCATION,
+  TIKTOK_USERNAME,
   whatsappLink,
 } from "@/lib/store";
 import { SiteShell } from "@/components/site/site-shell";
@@ -70,14 +70,14 @@ function ContactPage() {
             <p className="text-sm text-muted-foreground">@{INSTAGRAM_USERNAME}</p>
           </a>
           <a
-            href={`https://facebook.com/${FACEBOOK_USERNAME}`}
+            href={`https://tiktok.com/@${TIKTOK_USERNAME}`}
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-border bg-card p-5 transition-colors hover:bg-accent"
           >
-            <Facebook className="size-4 text-primary" strokeWidth={1.5} />
-            <p className="mt-2 text-sm">Facebook</p>
-            <p className="text-sm text-muted-foreground">/{FACEBOOK_USERNAME}</p>
+            <Music2 className="size-4 text-primary" strokeWidth={1.5} />
+            <p className="mt-2 text-sm">TikTok</p>
+            <p className="text-sm text-muted-foreground">@{TIKTOK_USERNAME}</p>
           </a>
         </div>
       </section>
