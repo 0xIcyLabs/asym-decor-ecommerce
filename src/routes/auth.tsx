@@ -10,10 +10,10 @@ export const Route = createFileRoute("/auth")({
       {
         name: "description",
         content:
-          "Log in with a 6-digit code sent to your email to place a website order and track your Asym Decor orders.",
+          "Log in with a verification link sent to your email to place a website order and track your Asym Decor orders.",
       },
       { property: "og:title", content: "Log in — Asym Decor" },
-      { property: "og:description", content: "Email code login for orders and order tracking." },
+      { property: "og:description", content: "Email verification link login for orders and order tracking." },
     ],
   }),
   component: AuthPage,
@@ -27,7 +27,7 @@ function AuthPage() {
         <p className="eyebrow">Account</p>
         <h1 className="mt-2 text-4xl">Log in to {BRAND}</h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          We'll email you a 6-digit code — no password to remember.
+          We'll email you a verification link — no password to remember.
         </p>
         <div className="mt-8">
           <LoginDialog

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { MailCheck } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,11 +17,10 @@ type Props = {
 
 export function LoginDialog({ open, onOpenChange, onSuccess, title, description }: Props) {
   const [email, setEmail] = useState("");
-  const [code, setCode] = useState("");
-  const [step, setStep] = useState<"email" | "code">("email");
+  const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  async function sendCode() {
+  async function sendLink() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       toast.error("Please enter a valid email address.");
       return;
@@ -35,29 +35,13 @@ export function LoginDialog({ open, onOpenChange, onSuccess, title, description 
       toast.error(error.message);
       return;
     }
-    setStep("code");
-    toast.success("We emailed you a 6-digit code.");
+    setSent(true);
+    toast.success("We emailed you a verification link.");
   }
 
-  async function verify() {
-    if (code.trim().length < 6) {
-      toast.error("Enter the 6-digit code from your email.");
-      return;
-    }
-    setBusy(true);
-    const { error } = await supabase.auth.verifyOtp({
-      email: email.trim(),
-      token: code.trim(),
-      type: "email",
-    });
-    setBusy(false);
-    if (error) {
-      toast.error(error.message);
-      return;
-    }
-    toast.success("You're logged in.");
-    setCode("");
-    setStep("email");
+  function close() {
+    setEmail("");
+    setSent(false);
     onOpenChange(false);
     onSuccess?.();
   }
@@ -70,55 +54,46 @@ export function LoginDialog({ open, onOpenChange, onSuccess, title, description 
         </DialogHeader>
         <p className="text-sm text-muted-foreground">
           {description ??
-            "Enter your email and we'll send you a 6-digit code — no password needed."}
+            "Enter your email and we'll send you a verification link — no password to remember."}
         </p>
-        {step === "email" ? (
+        {!sent ? (
           <div className="space-y-3">
             <div className="space-y-1.5">
-              <Label htmlFor="otp-email">Email</Label>
+              <Label htmlFor="login-email">Email</Label>
               <Input
-                id="otp-email"
+                id="login-email"
                 type="email"
                 inputMode="email"
                 autoComplete="email"
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendCode()}
+                onKeyDown={(e) => e.key === "Enter" && sendLink()}
               />
             </div>
-            <Button className="w-full" onClick={sendCode} disabled={busy}>
-              {busy ? "Sending…" : "Send code"}
+            <Button className="w-full" onClick={sendLink} disabled={busy}>
+              {busy ? "Sending…" : "Send verification link"}
             </Button>
           </div>
         ) : (
-          <div className="space-y-3">
-            <div className="space-y-1.5">
-              <Label htmlFor="otp-code">6-digit code sent to {email}</Label>
-              <p className="text-xs text-muted-foreground">
-                If the email shows a login link instead of a code, tapping that link signs you in
-                too.
-              </p>
-              <Input
-                id="otp-code"
-                inputMode="numeric"
-                maxLength={6}
-                placeholder="123456"
-                value={code}
-                onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
-                onKeyDown={(e) => e.key === "Enter" && verify()}
-              />
+          <div className="space-y-4 text-center">
+            <MailCheck className="mx-auto h-10 w-10 text-primary" />
+            <p className="text-sm">
+              We sent a verification link to <strong>{email}</strong>. Click the link in your email to
+              verify and continue.
+            </p>
+            <div className="flex flex-col gap-2">
+              <Button className="w-full" onClick={close}>
+                Continue
+              </Button>
+              <button
+                type="button"
+                className="w-full text-xs text-muted-foreground underline"
+                onClick={() => setSent(false)}
+              >
+                Use a different email
+              </button>
             </div>
-            <Button className="w-full" onClick={verify} disabled={busy}>
-              {busy ? "Verifying…" : "Verify & continue"}
-            </Button>
-            <button
-              type="button"
-              className="w-full text-xs text-muted-foreground underline"
-              onClick={() => setStep("email")}
-            >
-              Use a different email
-            </button>
           </div>
         )}
       </DialogContent>
