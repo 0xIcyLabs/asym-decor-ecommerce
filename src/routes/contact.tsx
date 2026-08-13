@@ -14,13 +14,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Orders on WhatsApp | Home Decor" },
+      { title: "Contact & Orders on WhatsApp | Asym Decor" },
       {
         name: "description",
         content:
-          "Message Home Decor on WhatsApp or Instagram for orders, custom pieces and delivery questions. Based in Pakistan, Cash on Delivery nationwide.",
+          "Message Asym Decor on WhatsApp or Instagram for orders, custom pieces and delivery questions. Based in Pakistan, Cash on Delivery nationwide.",
       },
-      { property: "og:title", content: "Contact Home Decor" },
+      { property: "og:title", content: "Contact Asym Decor" },
       {
         property: "og:description",
         content: "Reach us on WhatsApp, Instagram or email for orders and custom requests.",

@@ -6,13 +6,13 @@ import { BRAND } from "@/lib/store";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Log in — Home Decor" },
+      { title: "Log in — Asym Decor" },
       {
         name: "description",
         content:
-          "Log in with a 6-digit code sent to your email to place a website order and track your Home Decor orders.",
+          "Log in with a 6-digit code sent to your email to place a website order and track your Asym Decor orders.",
       },
-      { property: "og:title", content: "Log in — Home Decor" },
+      { property: "og:title", content: "Log in — Asym Decor" },
       { property: "og:description", content: "Email code login for orders and order tracking." },
     ],
   }),

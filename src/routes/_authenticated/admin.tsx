@@ -51,10 +51,10 @@ import {
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Admin — Home Decor" },
-      { name: "description", content: "Manage Home Decor orders and product catalog." },
+      { title: "Admin — Asym Decor" },
+      { name: "description", content: "Manage Asym Decor orders and product catalog." },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Admin — Home Decor" },
+      { property: "og:title", content: "Admin — Asym Decor" },
       { property: "og:description", content: "Internal order and catalog management." },
     ],
   }),

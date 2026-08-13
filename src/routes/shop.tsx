@@ -5,13 +5,13 @@ import { ProductBrowser } from "@/components/site/product-browser";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop Handmade Decor — Trays, Candles, Vases | Home Decor" },
+      { title: "Shop Handmade Decor — Trays, Candles, Vases | Asym Decor" },
       {
         name: "description",
         content:
           "Shop handmade trinket trays, soy candles, wall decor and vases. Prices in PKR, Cash on Delivery nationwide in Pakistan.",
       },
-      { property: "og:title", content: "Shop handmade home decor — Home Decor" },
+      { property: "og:title", content: "Shop handmade home decor — Asym Decor" },
       {
         property: "og:description",
         content: "Filter by category, search, and order on WhatsApp or directly on the site.",

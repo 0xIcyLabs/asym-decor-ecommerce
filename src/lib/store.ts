@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // TODO before publishing: replace these placeholders with the real values.
 // ---------------------------------------------------------------------------
-export const BRAND = "Home Decor";
+export const BRAND = "Asym Decor";
 export const BRAND_TAGLINE = "Handmade pieces for calm, warm homes.";
 export const WHATSAPP_NUMBER = "923000000000"; // digits only, incl. country code
 export const INSTAGRAM_USERNAME = "yourbrand";
