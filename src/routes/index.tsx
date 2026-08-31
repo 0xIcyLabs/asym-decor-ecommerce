@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Asym Decor — Handmade Trays, Candles & Vases in Pakistan" },
+      { title: `${BRAND} — Handmade Trays, Candles & Vases in Pakistan` },
       {
         name: "description",
         content:
           "Warm, minimal handmade home decor from Pakistan: trinket trays, candles, wall decor and vases. Cash on Delivery, nationwide.",
       },
-      { property: "og:title", content: "Asym Decor — Handmade decor for calm, warm homes" },
+      { property: "og:title", content: `${BRAND} — Handmade decor for calm, warm homes` },
       {
         property: "og:description",
         content:

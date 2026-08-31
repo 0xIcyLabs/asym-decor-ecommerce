@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Asym Decor — Handmade decor, Cash on Delivery in Pakistan" },
+      { title: `${BRAND} — Handmade decor, Cash on Delivery in Pakistan` },
       {
         name: "description",
         content:

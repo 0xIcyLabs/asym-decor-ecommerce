@@ -8,13 +8,13 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story — Handmade Asym Decor from Pakistan | Asym Decor" },
+      { title: `Our Story — Handmade ${BRAND} from Pakistan | ${BRAND}` },
       {
         name: "description",
         content:
-          "How Asym Decor began: small-batch handmade trays, candles and vases made in Pakistan, delivered nationwide with Cash on Delivery.",
+          `How ${BRAND} began: small-batch handmade trays, candles and vases made in Pakistan, delivered nationwide with Cash on Delivery.`,
       },
-      { property: "og:title", content: "Our story — Asym Decor" },
+      { property: "og:title", content: `Our story — ${BRAND}` },
       {
         property: "og:description",
         content: "Small-batch, handmade decor made in Pakistan and shipped nationwide.",

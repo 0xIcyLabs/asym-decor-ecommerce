@@ -9,12 +9,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 export const Route = createFileRoute("/_authenticated/my-orders")({
   head: () => ({
     meta: [
-      { title: "My Orders — Asym Decor" },
+      { title: `My Orders — ${BRAND}` },
       {
         name: "description",
-        content: "Track the status of your Asym Decor website orders, from pending to delivered.",
+        content: `Track the status of your ${BRAND} website orders, from pending to delivered.`,
       },
-      { property: "og:title", content: "My Orders — Asym Decor" },
+      { property: "og:title", content: `My Orders — ${BRAND}` },
       { property: "og:description", content: "Track your Cash on Delivery orders." },
     ],
   }),
