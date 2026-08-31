@@ -1,5 +1,4 @@
-# Handmade Home Decor Store (Cash on Delivery)
-
+# Home Decor Store
 A modern, minimalist e-commerce website for a small home decor brand — trinket
 trays, wall decor, candles and vases. There is **no payment gateway**: every
 order is **Cash on Delivery**, placed either through **WhatsApp** or as a
@@ -184,20 +183,4 @@ supabase/migrations/       database schema, policies and seed data
 
 Any host that supports a Node/edge server build works (the project targets a
 Cloudflare-style worker by default). Build with `npm run build` and set the
-same environment variables from `.env.example` in your host's dashboard.
-
-## Security notes
-
-- **Never commit `.env`** — it is git-ignored. Only the publishable/anon key
-  belongs in a frontend app.
-- **Never publish the service-role key or database password.** They bypass all
-  security rules.
-- Keep **Row Level Security enabled** on every table; policies are included in
-  the migrations.
-- Admin rights come from the database allowlist, never from client-side state.
-
-## License
-
-No license file is included. Add one (e.g. MIT) if you want others to reuse
-this code, and keep in mind that product photos and brand assets are usually
-not yours to redistribute.
+same environment variables from `.env.example` in your host's ddashboard
