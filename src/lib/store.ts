@@ -1,10 +1,23 @@
-export const BRAND = "Asym Decor";
-export const BRAND_TAGLINE = "Handmade pieces for calm, warm homes.";
-export const WHATSAPP_NUMBER = "923084558835"; // digits only, incl. country code
-export const INSTAGRAM_USERNAME = "asym.pk";
-export const TIKTOK_USERNAME = "asym.pk";
-export const CONTACT_EMAIL = "asymdecor@gmail.com";
-export const LOCATION = "Lahore, Pakistan";
+// ---------------------------------------------------------------------------
+// BRAND CONFIGURATION
+// ---------------------------------------------------------------------------
+// Every value below can be set with an environment variable (see .env.example)
+// so you never have to edit code to rebrand the site. If a variable is not
+// set, the placeholder fallback is used and the app still runs.
+// ---------------------------------------------------------------------------
+
+const env = import.meta.env as Record<string, string | undefined>;
+
+export const BRAND = env["VITE_BRAND_NAME"] || "Your Brand";
+export const BRAND_TAGLINE =
+  env["VITE_BRAND_TAGLINE"] || "Handmade pieces for calm, warm homes.";
+/** Digits only, including country code. Example: 923001234567 */
+export const WHATSAPP_NUMBER = env["VITE_WHATSAPP_NUMBER"] || "920000000000";
+export const INSTAGRAM_USERNAME = env["VITE_INSTAGRAM_USERNAME"] || "yourhandle";
+export const TIKTOK_USERNAME = env["VITE_TIKTOK_USERNAME"] || "yourhandle";
+export const CONTACT_EMAIL = env["VITE_CONTACT_EMAIL"] || "your-email@example.com";
+export const LOCATION = env["VITE_BRAND_LOCATION"] || "Your City, Pakistan";
+
 
 export const CATEGORIES = ["Trinket Trays", "Candles", "Wall Decor", "Vases"] as const;
 
