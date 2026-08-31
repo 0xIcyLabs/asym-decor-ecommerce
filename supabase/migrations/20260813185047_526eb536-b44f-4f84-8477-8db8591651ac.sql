@@ -1,1 +1,1 @@
-insert into public.admin_emails (email) values ('asymdecor@gmail.com') on conflict do nothing;
+insert into public.admin_emails (email) values ('admin@example.com') on conflict do nothing;

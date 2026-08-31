@@ -6,7 +6,7 @@ import { Pencil, Plus, Trash2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin, useSession } from "@/hooks/use-session";
 import { productImage, useProducts, type Product } from "@/lib/catalog";
-import { CATEGORIES, ORDER_STATUSES, formatPKR } from "@/lib/store";
+import { BRAND, CATEGORIES, ORDER_STATUSES, formatPKR } from "@/lib/store";
 import { SiteShell } from "@/components/site/site-shell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -51,10 +51,10 @@ import {
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Admin — Asym Decor" },
-      { name: "description", content: "Manage Asym Decor orders and product catalog." },
+      { title: `Admin — ${BRAND}` },
+      { name: "description", content: `Manage ${BRAND} orders and product catalog.` },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Admin — Asym Decor" },
+      { property: "og:title", content: `Admin — ${BRAND}` },
       { property: "og:description", content: "Internal order and catalog management." },
     ],
   }),

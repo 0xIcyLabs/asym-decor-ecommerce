@@ -2,19 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { SiteShell } from "@/components/site/site-shell";
-import { formatPKR } from "@/lib/store";
+import { BRAND, formatPKR } from "@/lib/store";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const Route = createFileRoute("/_authenticated/my-orders")({
   head: () => ({
     meta: [
-      { title: "My Orders — Asym Decor" },
+      { title: `My Orders — ${BRAND}` },
       {
         name: "description",
-        content: "Track the status of your Asym Decor website orders, from pending to delivered.",
+        content: `Track the status of your ${BRAND} website orders, from pending to delivered.`,
       },
-      { property: "og:title", content: "My Orders — Asym Decor" },
+      { property: "og:title", content: `My Orders — ${BRAND}` },
       { property: "og:description", content: "Track your Cash on Delivery orders." },
     ],
   }),
